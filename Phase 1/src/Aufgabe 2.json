@@ -1,0 +1,36 @@
+{
+  "gruppenanmeldung": {
+    "gruppe": {
+      "-id": "1",
+      "gruppenleiter": {
+        "vorname": "Max",
+        "nachname": "Mustermann",
+        "mail": "muster@muster.de",
+        "geburtsdatum": "01.01.1990",
+        "erfahrung": "Amateur",
+        "schlagzeug": "vorhanden",
+        "anmerkung": "Blubb"
+      },
+      "person": [
+        {
+          "-id": "1_1",
+          "vorname": "Hans",
+          "nachname": "Sarpei",
+          "email": "Chuck@Norris.de",
+          "geburtsdatum": "20.12.1900",
+          "erfahrung": "Profi",
+          "schlagzeug": "nicht vorhanden"
+        },
+        {
+          "-id": "1_2",
+          "vorname": "Peter",
+          "nachname": "Meier",
+          "email": "Peter@Meier.de",
+          "geburtsdatum": "12.12.1900",
+          "erfahrung": "Amateur",
+          "schlagzeug": "vorhanden"
+        }
+      ]
+    }
+  }
+}
