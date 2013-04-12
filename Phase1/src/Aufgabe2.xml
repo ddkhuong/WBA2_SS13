@@ -1,20 +1,26 @@
-<?xml version="1.0"?>
+<?xml version="1.0" encoding="UTF-8"?>
+
 <anmeldung>
-	<gruppenleiter>
-		<vorname>Max</vorname>
-		<nachname>Mustermann</nachname>
-		<email>Mustermann@beispiel.de</email>
-		<geburtsdatum>01.01.1900</geburtsdatum>
-		<erfahrung>Profi</erfahrung>
-		<schlagzeug>vorhanden</schlagzeug>
-		<anmerkung>Beispiel Anmerkung</anmerkung>
-	</gruppenleiter>
-    <person ><!-- können mehrere sein ÄNDERN -->
-        <vorname>Jon</vorname>
-        <nachname>Snow</nachname>
-        <email>snow@beispiel.de</email>
-        <geburtsdatum>01.01.1900</geburtsdatum>
-        <erfahrung>Amateur</erfahrung>
-        <schlagzeug>nicht vorhanden</schlagzeug>
-    </person>
-</anmeldung>
+	<gruppe id="1_1">
+		<gruppenleiter>
+			<vorname>Max</vorname>
+			<nachname>Mustermann</nachname>
+			<email>Mustermann@beispiel.de</email>
+			<geburtsdatum>01.01.1900</geburtsdatum>
+			<erfahrung>Profi</erfahrung>
+			<schlagzeug>vorhanden</schlagzeug>
+			<anmerkung>Beispiel Anmerkung</anmerkung>
+		</gruppenleiter>
+		
+		<personen>
+	    	<person id="1_1" >
+        		<vorname>Jon</vorname>
+        		<nachname>Snow</nachname>
+        		<email>snow@beispiel.de</email>
+        		<geburtsdatum>01.01.1900</geburtsdatum>
+        		<erfahrung>Amateur</erfahrung>
+        		<schlagzeug>nicht vorhanden</schlagzeug>
+    		</person>
+    	</personen>
+    </gruppe>
+</anmeldung>	

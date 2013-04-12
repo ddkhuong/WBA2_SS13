@@ -4,19 +4,11 @@ import generated.Rezept.Zutaten.Zutat;
 
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
-import java.math.BigDecimal;
-import java.math.BigInteger;
-import java.util.GregorianCalendar;
-import java.util.Locale;
 import java.util.Scanner;
-import java.util.TimeZone;
 
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.Marshaller;
 import javax.xml.bind.Unmarshaller;
-import javax.xml.datatype.Duration;
-import javax.xml.datatype.XMLGregorianCalendar;
-import javax.xml.namespace.QName;
 
 
 public class Einlesen {
@@ -33,6 +25,8 @@ public class Einlesen {
 		int a=in.nextInt();
 		String nameAutor="";
 		String eingegebenerKommentar="";
+		
+		//Mögl. 1: Ausgabe des Rezeptes
 		if (a==1)
 				{
 			for (Zutat z:r.getZutaten().getZutat()){
@@ -54,6 +48,8 @@ public class Einlesen {
 				System.out.println(k.getValue());
 					}
 			}
+		
+		//Mögl. 2: Hinzufügen eines Kommentars
 		else if (a==2){
 			System.out.println("geben Sie ihren Namen ein:");
 			nameAutor=in.next();
@@ -65,6 +61,7 @@ public class Einlesen {
 			return;
 		}
 		
+		//neuen Kommentar erstellen
 		Kommentar k = new Kommentar();
 		
 		k.setAutor(nameAutor);
@@ -75,7 +72,7 @@ public class Einlesen {
 		
 		r.getKommentare().getKommentar().add(k);
 		
-		
+		//Speichern in XML
 		Marshaller ma=context.createMarshaller();
 		ma.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
 		ma.marshal(r, new FileOutputStream("src/Aufgabe3Rezept.xml"));

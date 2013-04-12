@@ -1,0 +1,27 @@
+{
+  "anmeldung": {
+    "gruppe": {
+      "-id": "1_1",
+      "gruppenleiter": {
+        "vorname": "Max",
+        "nachname": "Mustermann",
+        "email": "Mustermann@beispiel.de",
+        "geburtsdatum": "01.01.1900",
+        "erfahrung": "Profi",
+        "schlagzeug": "vorhanden",
+        "anmerkung": "Beispiel Anmerkung"
+      },
+      "personen": {
+        "person": {
+          "-id": "1_1",
+          "vorname": "Jon",
+          "nachname": "Snow",
+          "email": "snow@beispiel.de",
+          "geburtsdatum": "01.01.1900",
+          "erfahrung": "Amateur",
+          "schlagzeug": "nicht vorhanden"
+        }
+      }
+    }
+  }
+}
