@@ -4,6 +4,7 @@ import generated.Rezept.Zutaten.Zutat;
 
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.Scanner;
@@ -68,25 +69,31 @@ public class Einlesen {
 		//Mögl. 2: Hinzufügen eines Kommentars
 		else if (a==2){
 			System.out.println("geben Sie ihren Namen ein:");
-			nameAutor=in.next();
+			nameAutor=in.next()+in.nextLine();
 			System.out.println("geben Sie ihren den Kommentar ein:");
-			eingegebenerKommentar=in.next();
+			eingegebenerKommentar=in.next()+in.nextLine();
+			
+			Date now = new Date();
+			GregorianCalendar c = new GregorianCalendar();
+			c.setTime(now);                                        // aktuelle Zeit und Datum als XML Calendar
+			XMLGregorianCalendar date2 = DatatypeFactory.newInstance().newXMLGregorianCalendar(c); 
+			//neuen Kommentar erstellen
+			Kommentar k = new Kommentar();
+			
+			k.setAutor(nameAutor);
+			k.setDatum(date2);		
+			k.setId((new Integer((int)(Math.random()*42*42))).toString());
+			//k.setZeit(r.getKommentare().getKommentar().get(0).getZeit());
+			k.setValue(eingegebenerKommentar);
+			
+			r.getKommentare().getKommentar().add(k);
 		}
 		else {
 			System.out.println("Fehler!");
 			return;
 		}
 		
-		//neuen Kommentar erstellen
-		Kommentar k = new Kommentar();
 		
-		k.setAutor(nameAutor);
-		k.setDatum(r.getKommentare().getKommentar().get(0).getDatum());		
-		k.setId((new Integer((int)(Math.random()*42*42))).toString());
-		k.setZeit(r.getKommentare().getKommentar().get(0).getZeit());
-		k.setValue(eingegebenerKommentar);
-		
-		r.getKommentare().getKommentar().add(k);
 		
 		//Speichern in XML
 		Marshaller ma=context.createMarshaller();

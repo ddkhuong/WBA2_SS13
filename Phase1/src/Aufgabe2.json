@@ -11,7 +11,7 @@
         "schlagzeug": "vorhanden",
         "anmerkung": "Beispiel Anmerkung"
       },
-      "personen": {
+      "personen": [ { 
         "person": {
           "-id": "1_1",
           "vorname": "Jon",
@@ -22,6 +22,7 @@
           "schlagzeug": "nicht vorhanden"
         }
       }
+      ]
     }
   }
 }

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <anmeldung>
-	<gruppe id="1_1">
+	<gruppe id="1">
 		<gruppenleiter>
 			<vorname>Max</vorname>
 			<nachname>Mustermann</nachname>
