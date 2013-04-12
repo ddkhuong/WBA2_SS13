@@ -4,16 +4,31 @@ import generated.Rezept.Zutaten.Zutat;
 
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
+import java.util.Date;
+import java.util.GregorianCalendar;
 import java.util.Scanner;
+
 
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.Marshaller;
 import javax.xml.bind.Unmarshaller;
+import javax.xml.datatype.DatatypeFactory;
+import javax.xml.datatype.XMLGregorianCalendar;
 
 
 public class Einlesen {
 	public static void main(String[] args) throws Exception {
 		JAXBContext context = JAXBContext.newInstance(Rezept.class);
+		
+		/*java.util.Date now = new java.util.Date();
+		java.text.SimpleDateFormat sdf = new java.text.SimpleDateFormat("dd.MM.yyyy HH.mm.ss");
+		String ausgabe = sdf.format(now);
+		
+		GregorianCalendar c = new GregorianCalendar();
+		c.setTime(now);
+		XMLGregorianCalendar date2 = DatatypeFactory.newInstance().newXMLGregorianCalendar(c);
+		*/
+		
 		
 		// Java objekte aus XML erstellen
 		Unmarshaller um=context.createUnmarshaller();
@@ -39,7 +54,8 @@ public class Einlesen {
 			System.out.println("Schwierigkeitsgrad "+r.getZubereitung().getSchwierigkeitsgrad());
 			System.out.println("Brennwert: "+r.getZubereitung().getBrennwert());
 			System.out.println(r.getZubereitung().getBeschreibung());
-
+			
+			
 			for(Kommentar k:r.getKommentare().getKommentar()){
 				System.out.println(k.getAutor());
 				System.out.println(k.getId());
@@ -65,7 +81,7 @@ public class Einlesen {
 		Kommentar k = new Kommentar();
 		
 		k.setAutor(nameAutor);
-		k.setDatum(r.getKommentare().getKommentar().get(0).getDatum());
+		k.setDatum(r.getKommentare().getKommentar().get(0).getDatum());		
 		k.setId((new Integer((int)(Math.random()*42*42))).toString());
 		k.setZeit(r.getKommentare().getKommentar().get(0).getZeit());
 		k.setValue(eingegebenerKommentar);
